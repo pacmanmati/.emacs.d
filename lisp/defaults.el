@@ -23,7 +23,8 @@
 (global-unset-key (kbd "C-x C-z"))
 (put 'dired-find-alternate-file 'disabled nil)
 (setq
- save-interprogram-paste-before-kill t		;; makes x and emacs clipboard the same
+ save-interprogram-paste-before-kill t          ;; preserves OS clipboard in kill ring when cutting in emacs
+ select-enable-clipboard t			;; makes x and emacs clipboard work the same both ways 
  custom-file "custom.el"
  backup-directory-alist `(("." . "~/.saves"))	;; dedicated dir to prevent backup file clutter
  apropos-do-all t				;; C-h a searches more extensively
