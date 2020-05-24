@@ -1,3 +1,8 @@
+;;
+;; -- install-packages.el --
+;; package install/configs using use-package.
+;;
+
 (use-package vterm
   :bind
   ("<C-return>" . vterm-other-window))
@@ -11,6 +16,10 @@
   (setq which-key-show-early-on-C-h t)
   (setq which-key-idle-delay 1)
   (which-key-mode 1))
+
+(use-package dracula-theme)
+
+(use-package hydra)
 
 ;; TODO company-irony-c-headers
 (use-package company

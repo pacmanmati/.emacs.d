@@ -1,3 +1,11 @@
+;;
+;; -- defaults.el --
+;; loose config commands that have no place elsewhere.
+;;
+
+;; font
+(set-frame-font "Fira Code 13" nil t)
+
 ;; sometimes emacs sets a default through use
 ;; put such defaults in here
 (defadvice en/disable-command (around put-in-custom-file activate)

@@ -1,3 +1,7 @@
+;;
+;; -- config-package.el --
+;; set up package archives and use-package.
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
