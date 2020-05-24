@@ -3,10 +3,6 @@
 ;; package install/configs using use-package.
 ;;
 
-(use-package vterm
-  :bind
-  ("<C-return>" . vterm-other-window))
-
 (use-package minions
   :config (minions-mode)
   :bind ("<S-down-mouse-3>" . minions-minor-modes-menu))
@@ -18,8 +14,20 @@
   (which-key-mode 1))
 
 (use-package dracula-theme)
-
 (use-package hydra)
+
+(use-package ivy
+  :config
+  (ivy-mode 1)
+  :bind
+  ("C-s" . 'swiper-isearch)
+  ("M-x" . 'counsel-M-x)
+  ("C-x C-f" . 'counsel-find-file)
+  ("M-y" . 'counsel-yank-pop)
+  ("C-x b" . 'ivy-switch-buffer))
+
+(use-package counsel)
+(use-package swiper)
 
 ;; TODO company-irony-c-headers
 (use-package company
