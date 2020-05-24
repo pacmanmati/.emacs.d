@@ -1,0 +1,5 @@
+(add-to-list 'load-path "~/.emacs.d/lisp")
+(load "defaults.el")
+(load "package.el")
+(load custom-file)
+(load "install-packages.el")
