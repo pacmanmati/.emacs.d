@@ -23,12 +23,14 @@
 (global-unset-key (kbd "C-x C-z"))
 (put 'dired-find-alternate-file 'disabled nil)
 (setq
+ save-interprogram-paste-before-kill t
  custom-file "custom.el"
  backup-directory-alist `(("." . "~/.saves"))	;; dedicated dir to prevent backup file clutter
  apropos-do-all t				;; C-h a searches more extensively
  mouse-yank-at-point t				;; middle click paste at cursor (not mouse)
  uniquify-buffer-name-style 'forward		;; nicer duplicate buffer names
  load-prefer-newer t
+ inhibit-startup-message t
  )
 
 (save-place-mode 1)
