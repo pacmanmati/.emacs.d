@@ -3,6 +3,10 @@
 ;; package install/configs using use-package.
 ;;
 
+(use-package vterm
+  :bind
+  ("<C-return>" . vterm-other-window))
+
 (use-package minions
   :config (minions-mode)
   :bind ("<S-down-mouse-3>" . minions-minor-modes-menu))
