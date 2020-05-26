@@ -8,7 +8,7 @@
   ("<C-return>" . vterm-other-window))
 
 (use-package minions
-  :config (minions-mode)
+  :init (minions-mode)
   :bind ("<S-down-mouse-3>" . minions-minor-modes-menu))
 
 (use-package which-key
@@ -36,8 +36,9 @@
 ;; TODO company-irony-c-headers
 (use-package company
   :ensure company-irony
+  :init (global-company-mode)
   :config
-  (add-hook 'after-init-hook #'global-company-mode)
+  ;; (add-hook 'after-init-hook #'global-company-mode)
   (setq company-idle-delay 0.5)
   :bind
   ("C-." . company-search-candidates))
