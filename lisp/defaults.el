@@ -35,3 +35,9 @@
  )
 
 (save-place-mode 1)
+
+;; open header files in cpp mode
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+(setq mouse-wheel-progressive-speed nil)

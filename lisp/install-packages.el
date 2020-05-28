@@ -39,9 +39,12 @@
   :init (global-company-mode)
   :config
   ;; (add-hook 'after-init-hook #'global-company-mode)
-  (setq company-idle-delay 0.5)
+  (setq company-idle-delay 0.3)
   :bind
   ("C-." . company-search-candidates))
+
+;; glsl shaders
+(use-package glsl-mode)
 
 ;; mostly c++ stuff
 
