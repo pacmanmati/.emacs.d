@@ -4,6 +4,8 @@
 ;;
 
 (use-package vterm
+  :config
+  (setq vterm-always-compile-module t)
   :bind
   ("<C-return>" . vterm-other-window))
 
