@@ -34,7 +34,11 @@
  inhibit-startup-message t
  )
 
+;; reopen files on past line number
 (save-place-mode 1)
+
+;; typing deletes selection
+(delete-selection-mode 1)
 
 ;; open header files in cpp mode
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
