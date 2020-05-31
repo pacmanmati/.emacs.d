@@ -40,7 +40,11 @@
 ;; typing deletes selection
 (delete-selection-mode 1)
 
+;; display (row,col) on modeline
 (column-number-mode 1)
+
+;; display time on modeline
+(display-time-mode 1)
 
 ;; open header files in cpp mode
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
