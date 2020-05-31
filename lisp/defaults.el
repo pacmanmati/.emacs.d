@@ -40,6 +40,8 @@
 ;; typing deletes selection
 (delete-selection-mode 1)
 
+(column-number-mode 1)
+
 ;; open header files in cpp mode
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
