@@ -32,6 +32,7 @@
  uniquify-buffer-name-style 'forward		;; nicer duplicate buffer names
  load-prefer-newer t
  inhibit-startup-message t
+ display-time-default-load-average nil
  )
 
 ;; reopen files on past line number
