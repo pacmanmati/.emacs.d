@@ -5,6 +5,7 @@
 
 ;; font
 (set-frame-font "Fira Code 13" nil t)
+;; (add-to-alist 'default-frame-alist '(font . "Fira Code 13"))
 
 ;; sometimes emacs sets a default through use
 ;; put such defaults in here
@@ -47,8 +48,9 @@
 ;; display time on modeline
 (display-time-mode 1)
 
-;; open header files in cpp mode
+;; open .h/c in cpp mode
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.c\\'" . c++-mode))
 
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
