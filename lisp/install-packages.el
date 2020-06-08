@@ -9,6 +9,8 @@
   :bind
   ("<C-return>" . vterm-other-window))
 
+(use-package sudo-edit)
+
 (use-package minions
   :init (minions-mode)
   :bind ("<S-down-mouse-3>" . minions-minor-modes-menu))
