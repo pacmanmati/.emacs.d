@@ -7,7 +7,7 @@
   :config
   (setq vterm-always-compile-module t)
   :bind
-  ("<C-return>" . vterm-other-window))
+  ("<C-return>" . vterm))
 
 (use-package sudo-edit)
 
