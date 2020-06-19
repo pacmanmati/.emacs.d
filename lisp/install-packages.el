@@ -20,7 +20,7 @@
 (use-package which-key
   :config
   (setq which-key-show-early-on-C-h t)
-  (setq which-key-idle-delay 1)
+  (setq which-key-idle-delay 3)
   (which-key-mode 1))
 
 (use-package dracula-theme)
