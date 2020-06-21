@@ -13,6 +13,8 @@
 
 (use-package magit)
 
+(use-package rust-mode)
+
 (use-package minions
   :init (minions-mode)
   :bind ("<S-down-mouse-3>" . minions-minor-modes-menu))
