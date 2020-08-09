@@ -4,8 +4,9 @@
 ;;
 
 ;; font
-(set-frame-font "Fira Code 13" nil t)
-;; (add-to-alist 'default-frame-alist '(font . "Fira Code 13"))
+;; (set-frame-font "Fira Code 13" nil t)
+;; this way works with emacsclient, the above does not
+(add-to-list 'default-frame-alist '(font . "Fira Code 13"))
 
 ;; sometimes emacs sets a default through use
 ;; put such defaults in here
@@ -24,16 +25,20 @@
 (global-unset-key (kbd "C-x C-z"))
 (put 'dired-find-alternate-file 'disabled nil)
 (setq
- save-interprogram-paste-before-kill t          ;; preserves OS clipboard in kill ring when cutting in emacs
- select-enable-clipboard t			;; makes x and emacs clipboard work the same both ways 
+ save-interprogram-paste-before-kill t  ;; preserves OS clipboard in kill ring when cutting in emacs
+ select-enable-clipboard t		;; makes x and emacs clipboard work the same both ways 
  custom-file "custom.el"
- backup-directory-alist `(("." . "~/.saves"))	;; dedicated dir to prevent backup file clutter
- apropos-do-all t				;; C-h a searches more extensively
- mouse-yank-at-point t				;; middle click paste at cursor (not mouse)
- uniquify-buffer-name-style 'forward		;; nicer duplicate buffer names
+					;; backup-directory-alist '((".*" . ,"~/.saves"))	;; dedicated dir to prevent backup file clutter
+					;; auto-save-file-name-transforms '((".*" . "~/.saves")) ;; both of these lines are fucked
+ auto-save-default nil			;; fuck the backup files 
+ make-backup-files nil
+ apropos-do-all t			;; C-h a searches more extensively
+ mouse-yank-at-point t			;; middle click paste at cursor (not mouse)
+ uniquify-buffer-name-style 'forward	;; nicer duplicate buffer names
  load-prefer-newer t
  inhibit-startup-message t
  display-time-default-load-average nil
+ create-lockfiles nil			;; don't create '.#{FILENAME}' files in current directory
  )
 
 ;; reopen files on past line number

@@ -3,11 +3,20 @@
 ;; package install/configs using use-package.
 ;;
 
+(use-package svelte-mode)
+
 (use-package vterm
   :config
   (setq vterm-always-compile-module t)
   :bind
   ("<C-return>" . vterm))
+
+(use-package rainbow-mode
+  :hook (js-mode . rainbow-mode))
+
+(use-package ledger-mode)
+
+(use-package web-mode)
 
 (use-package sudo-edit)
 
@@ -28,16 +37,23 @@
 (use-package dracula-theme)
 (use-package hydra)
 
+;; TODO FIXME KLUDGE THEM NEXT FAIL DONT DONE NOTE HACK XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;; TEMP PROG HOLD XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+;; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+(use-package hl-todo)
+
 (use-package ivy
   :config
   (ivy-mode 1)
   :bind
   ("C-s" . 'swiper-isearch)
+  ("C-r" . 'swiper-isearch-backward)
   ("M-x" . 'counsel-M-x)
   ("C-x C-f" . 'counsel-find-file)
   ("M-y" . 'counsel-yank-pop)
   ("C-x b" . 'ivy-switch-buffer))
 
+;; TODO setup counsel-irony
 (use-package counsel)
 (use-package swiper)
 
