@@ -3,6 +3,8 @@
 ;; package install/configs using use-package.
 ;;
 
+(use-package markdown-mode)
+
 (use-package svelte-mode)
 
 (use-package vterm
