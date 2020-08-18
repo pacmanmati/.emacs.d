@@ -28,9 +28,7 @@
  save-interprogram-paste-before-kill t  ;; preserves OS clipboard in kill ring when cutting in emacs
  select-enable-clipboard t		;; makes x and emacs clipboard work the same both ways 
  custom-file "custom.el"
-					;; backup-directory-alist '((".*" . ,"~/.saves"))	;; dedicated dir to prevent backup file clutter
-					;; auto-save-file-name-transforms '((".*" . "~/.saves")) ;; both of these lines are fucked
- auto-save-default nil			;; fuck the backup files 
+ auto-save-default nil			;; yeet the backup files
  make-backup-files nil
  apropos-do-all t			;; C-h a searches more extensively
  mouse-yank-at-point t			;; middle click paste at cursor (not mouse)
@@ -39,6 +37,9 @@
  inhibit-startup-message t
  display-time-default-load-average nil
  create-lockfiles nil			;; don't create '.#{FILENAME}' files in current directory
+ scroll-conservatively 101		;; sane cursor scrolling that doesn't disorient you - i dont know how i lived without this for so long
+					;; i also have no idea why i couldn't find this under any search term on the internet
+					;; instead i had to 'C-h v' my way down the rabbit hole and find out the desireable behaviour is achieved by setting this var >100
  )
 
 ;; reopen files on past line number
@@ -57,5 +58,6 @@
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.c\\'" . c++-mode))
 
+;; sane mouse wheel scroll
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
