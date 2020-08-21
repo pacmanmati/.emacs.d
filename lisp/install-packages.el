@@ -7,9 +7,23 @@
 
 (use-package vterm
   :config
-  (setq vterm-always-compile-module t)
+  (setq ;; vterm-use-vterm-prompt t
+	vterm-always-compile-module t)
   :bind
   ("<C-return>" . vterm))
+
+;; TODO opening files within emacs using vterm
+;; apparently this breaks with remote systems
+(defun vterm-directory-sync ()
+  "Synchronize current working directory."
+  (interactive)
+  (ignore-errors ;; ignore error when no vterm exists
+    (when vterm--process
+    (let* ((pid (process-id vterm--process))
+           (dir (file-truename (format "/proc/%d/cwd/" pid))))
+      (setq default-directory dir)))))
+
+(advice-add #'counsel-find-file :before #'vterm-directory-sync)
 
 (use-package rainbow-mode
   :hook (js-mode . rainbow-mode))
