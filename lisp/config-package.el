@@ -6,13 +6,14 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-;; if new install, re-fetch
-(unless package-archive-contents
-  (package-refresh-contents))
+;; refresh package contents at launch, asynchronously
+;; should run approx. once per boot, emacsclient shouldn't re-run
+(package-refresh-contents t)
 
 ;; define auto-install packages
 (setq auto-install-list '(use-package))
 
+;; UNTESTED
 ;; auto-install packages
 (dolist (package auto-install-list)
   (unless (package-installed-p package)
