@@ -58,7 +58,8 @@
 ;; TODO FIXME KLUDGE THEM NEXT FAIL DONT DONE NOTE HACK XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ;; TEMP PROG HOLD XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ;; XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-(use-package hl-todo)
+(use-package hl-todo
+  :hook (after-init-hook . global-hl-todo-mode))
 
 (use-package ivy
   :config
@@ -89,21 +90,15 @@
 (use-package glsl-mode)
 
 ;; mostly c++ stuff
-
 (use-package irony
+  ;; run irony-server?
   :hook ((c-mode c++-mode) . irony-mode)
   :hook (irony-mode . irony-cdb-autosetup-compile-options))
 
-;; (use-package irony-eldoc
-;;   :hook irony-mode)
+(use-package irony-eldoc
+  :hook (irony-mode . irony-eldoc))
 
 (use-package flycheck-irony
   :ensure flycheck-inline
-  :hook irony
+  :hook irony-mode
   :hook (after-init-hook . global-flycheck-mode))
-
-;; setup lsp-mode with some frontend (company?) - auto-correct
-;; maybe a linter
-;; syntax checker (flymake?)
-;; cpp-mode, haskell-mode, whatever else sounds useful
-;; a nice theme
