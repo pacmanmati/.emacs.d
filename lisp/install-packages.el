@@ -3,6 +3,8 @@
 ;; package install/configs using use-package.
 ;;
 
+(use-package lua-mode)
+
 (use-package markdown-mode)
 
 (use-package svelte-mode)
