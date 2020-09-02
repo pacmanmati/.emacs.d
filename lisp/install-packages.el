@@ -7,8 +7,12 @@
 
 (use-package markdown-mode)
 
+(use-package gdscript-mode)
+
 (use-package svelte-mode)
 
+
+;; would be cool if file paths were clickable in the shell
 (use-package vterm
   :config
   (setq ;; vterm-use-vterm-prompt t
