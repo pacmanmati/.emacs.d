@@ -6,7 +6,8 @@
 ;; font
 ;; (set-frame-font "Fira Code 13" nil t)
 ;; this way works with emacsclient, the above does not
-(add-to-list 'default-frame-alist '(font . "Fira Code 13"))
+;; (add-to-list 'default-frame-alist '(font . "Fira Code 13"))
+(add-to-list 'default-frame-alist '(font . "Gohu GohuFont 13"))
 
 ;; sometimes emacs sets a default through use
 ;; put such defaults in here
@@ -40,6 +41,8 @@
  scroll-conservatively 101		;; sane cursor scrolling that doesn't disorient you - i dont know how i lived without this for so long
 					;; i also have no idea why i couldn't find this under any search term on the internet
 					;; instead i had to 'C-h v' my way down the rabbit hole and find out the desireable behaviour is achieved by setting this var >100
+ truncate-lines t
+ confirm-kill-emacs 'yes-or-no-p
  )
 
 ;; reopen files on past line number

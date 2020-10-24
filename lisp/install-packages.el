@@ -3,20 +3,12 @@
 ;; package install/configs using use-package.
 ;;
 
-(use-package lua-mode)
-
 (use-package markdown-mode)
 
-(use-package gdscript-mode)
-
-(use-package svelte-mode)
-
-
-;; would be cool if file paths were clickable in the shell
+;; TODO consider switching to eshell, it's way faster and might have nicer emacs compat
 (use-package vterm
   :config
-  (setq ;; vterm-use-vterm-prompt t
-	vterm-always-compile-module t)
+  (setq vterm-always-compile-module t)
   :bind
   ("<C-return>" . vterm))
 
@@ -33,18 +25,11 @@
 
 (advice-add #'counsel-find-file :before #'vterm-directory-sync)
 
-(use-package rainbow-mode
-  :hook (js-mode . rainbow-mode))
-
 (use-package ledger-mode)
-
-(use-package web-mode)
 
 (use-package sudo-edit)
 
 (use-package magit)
-
-(use-package rust-mode)
 
 (use-package minions
   :init (minions-mode)
@@ -76,33 +61,5 @@
   ("M-y" . 'counsel-yank-pop)
   ("C-x b" . 'ivy-switch-buffer))
 
-;; TODO setup counsel-irony
 (use-package counsel)
 (use-package swiper)
-
-;; TODO company-irony-c-headers
-(use-package company
-  :ensure company-irony
-  :init (global-company-mode)
-  :config
-  ;; (add-hook 'after-init-hook #'global-company-mode)
-  (setq company-idle-delay 0.3)
-  :bind
-  ("C-." . company-search-candidates))
-
-;; glsl shaders
-(use-package glsl-mode)
-
-;; mostly c++ stuff
-(use-package irony
-  ;; run irony-server?
-  :hook ((c-mode c++-mode) . irony-mode)
-  :hook (irony-mode . irony-cdb-autosetup-compile-options))
-
-(use-package irony-eldoc
-  :hook (irony-mode . irony-eldoc))
-
-(use-package flycheck-irony
-  :ensure flycheck-inline
-  :hook irony-mode
-  :hook (after-init-hook . global-flycheck-mode))
