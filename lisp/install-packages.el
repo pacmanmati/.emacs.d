@@ -5,12 +5,18 @@
 
 (use-package markdown-mode)
 
+(use-package svelte-mode)
+
+(use-package racket-mode)
+
+(use-package rust-mode)
+
 ;; TODO consider switching to eshell, it's way faster and might have nicer emacs compat
-(use-package vterm
-  :config
-  (setq vterm-always-compile-module t)
-  :bind
-  ("<C-return>" . vterm))
+;; (use-package vterm
+;;   :config
+;;   (setq vterm-always-compile-module t)
+;;   :bind
+;; ("<C-return>" . vterm))
 
 ;; TODO opening files within emacs using vterm
 ;; apparently this breaks with remote systems

@@ -41,7 +41,7 @@
  scroll-conservatively 101		;; sane cursor scrolling that doesn't disorient you - i dont know how i lived without this for so long
 					;; i also have no idea why i couldn't find this under any search term on the internet
 					;; instead i had to 'C-h v' my way down the rabbit hole and find out the desireable behaviour is achieved by setting this var >100
- truncate-lines t
+ truncate-lines nil
  confirm-kill-emacs 'yes-or-no-p
  )
 
@@ -64,3 +64,6 @@
 ;; sane mouse wheel scroll
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
+
+;; bind ;; ("<C-return>" . eshell))
+(global-set-key (kbd "<C-return>") 'eshell)
